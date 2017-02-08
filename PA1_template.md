@@ -69,7 +69,7 @@ p2<- p2+ ggtitle("Daily average steps by interval")+ xlab("Interval")+ ylab("Ave
 print(p2)
 ```
 
-![](PA1_template_files/figure-html/plot2-1.png)<!-- -->
+![](/figure/plot2-1.png)<!-- -->
 ##### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ```r
@@ -108,7 +108,7 @@ p3<- p3+ xlab("Total number of steps taken each day with imputed data")+ ylab("F
 print(p3)
 ```
 
-![](PA1_template_files/figure-html/plot3-1.png)<!-- -->
+![](/figure/plot3-1.png)<!-- -->
 
 ```r
 print(paste('The mean of the total number of steps taken each day is:', round(mean(imputed_data$steps), 2)))
@@ -144,4 +144,4 @@ imputed_data<- imputed_data %>%
 xyplot(ave_f~ interval| week_factor, data=imputed_data, layout= c(1, 2), type= "l", ylab= "Number of steps")
 ```
 
-![](PA1_template_files/figure-html/plot4-1.png)<!-- -->
+![](/figure/plot4-1.png)<!-- -->
