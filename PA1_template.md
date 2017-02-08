@@ -36,6 +36,8 @@ p1<- ggplot(steps_per_day, aes(total))+ geom_histogram(fill= "grey60")
 p1<- p1+ xlab("Total number of steps taken each day")+ ylab("Frequency")
 print(p1)
 ```
+
+![](PA1_template_files/figure-html/plot1-1.png)<!-- -->
 ##### 3. Calculate and report the mean and median of the total number of steps taken per day
 
 ```r
@@ -66,6 +68,8 @@ p2<- ggplot(interval_average, aes(interval, ave)) + geom_line()
 p2<- p2+ ggtitle("Daily average steps by interval")+ xlab("Interval")+ ylab("Average steps taken")
 print(p2)
 ```
+
+![](PA1_template_files/figure-html/plot2-1.png)<!-- -->
 ##### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ```r
@@ -104,6 +108,8 @@ p3<- p3+ xlab("Total number of steps taken each day with imputed data")+ ylab("F
 print(p3)
 ```
 
+![](PA1_template_files/figure-html/plot3-1.png)<!-- -->
+
 ```r
 print(paste('The mean of the total number of steps taken each day is:', round(mean(imputed_data$steps), 2)))
 ```
@@ -137,3 +143,5 @@ imputed_data<- imputed_data %>%
 ```r
 xyplot(ave_f~ interval| week_factor, data=imputed_data, layout= c(1, 2), type= "l", ylab= "Number of steps")
 ```
+
+![](PA1_template_files/figure-html/plot4-1.png)<!-- -->

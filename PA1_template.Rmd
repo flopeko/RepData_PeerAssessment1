@@ -32,7 +32,7 @@ steps_per_day<- raw_data %>%
         summarize(total= sum(steps, na.rm= TRUE))
 ```
 ##### 2. Make a histogram of the total number of steps taken each day (ggplot2 library was used)
-```{r plot1, echo= TRUE, message= FALSE, fig.show= "hide"}
+```{r plot1, echo= TRUE, message= FALSE}
 p1<- ggplot(steps_per_day, aes(total))+ geom_histogram(fill= "grey60")
 p1<- p1+ xlab("Total number of steps taken each day")+ ylab("Frequency")
 print(p1)
@@ -44,7 +44,7 @@ print(paste("The median of the total number of steps taken each day is: ", media
 ```
 ## What is the average daily activity pattern?
 ##### 1. Make a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis) (ggplot2 library was used)
-```{r plot2, echo= TRUE, fig.show= "hide"}
+```{r plot2, echo= TRUE}
 # Calculate the average number of steps taken by interval
 interval_average<- raw_data %>%
         group_by(interval) %>% 
@@ -74,7 +74,7 @@ imputed_data<- raw_data %>%
         mutate(steps= ifelse(is.na(steps), ave, steps))
 ```
 ##### 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps? (ggplot2 library was used)
-```{r plot3, echo= TRUE, message= FALSE, fig.show= "hide"}
+```{r plot3, echo= TRUE, message= FALSE}
 p3<- ggplot(imputed_data, aes(steps))+ geom_histogram(fill= "grey60")
 p3<- p3+ xlab("Total number of steps taken each day with imputed data")+ ylab("Frequency")
 print(p3)
@@ -95,6 +95,6 @@ imputed_data<- imputed_data %>%
         summarize(ave_f= mean(steps)) 
 ```
 ##### 2. Make a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis) (lattice library was used)
-```{r plot4, echo= TRUE, fig.show= "hide"}
+```{r plot4, echo= TRUE}
 xyplot(ave_f~ interval| week_factor, data=imputed_data, layout= c(1, 2), type= "l", ylab= "Number of steps")
 ```
