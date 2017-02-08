@@ -37,7 +37,7 @@ p1<- p1+ xlab("Total number of steps taken each day")+ ylab("Frequency")
 print(p1)
 ```
 
-![](PA1_template_files/figure-html/plot1-1.png)<!-- -->
+![](/figure/plot1-1.png)<!-- -->
 ##### 3. Calculate and report the mean and median of the total number of steps taken per day
 
 ```r
